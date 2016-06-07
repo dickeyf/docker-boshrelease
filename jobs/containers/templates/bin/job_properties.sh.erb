@@ -207,6 +207,11 @@ export <%= container['name'] %>_stop_signal="--stop-signal=<%= container['stop_s
 export <%= container['name'] %>_ulimits="<%= Array(container['ulimits']).join(',').split(',').map { |ulimit| "--ulimit=#{ulimit}" }.join(' ') %>"
 <% end %>
 
+<% unless container['uts'].nil? || container['uts'].empty? %>
+# Set Ulimit options
+export <%= container['name'] %>_uts="--uts=<%= container['uts'] %>"
+<% end %>
+
 <% if container['user'] %>
 # Username or UID to run the first process
 export <%= container['name'] %>_user="--user=<%= container['user'] %>"

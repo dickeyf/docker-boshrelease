@@ -52,6 +52,7 @@ properties:
       containers.security_options: Optional array of security options
       containers.stop_signal: Optional string containing the signal to stop a container, SIGTERM by default
       containers.ulimits: Optional array of Ulimit options
+      containers.uts: Optional string to set the UTS namespace mode for this container.
       containers.user: Optional string containing the username or UID to run the first process
       containers.volumes: Optional array of volumes to bind mount
       containers.bind_volumes: Optional array of container mountpoints to bind to a host directory
